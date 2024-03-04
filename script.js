@@ -8,8 +8,8 @@ for (let j = 1; j <= 273; j++) {
 }
 
 /* Working on changing color feature when mouse hovers over div */
-/* containerDiv.addEventListener('mousemove', (e) => {
+containerDiv.addEventListener('mousemove', (e) => {
     containerDiv.style.backgroundColor = 
     "rgb("+e.offsetX+","+e.offsetY+", 40)";
     console.log('x:' + e.offsetX + ", y:" + e.offsetY);
-}); */
+});
