@@ -2,10 +2,13 @@
     box-sizing: border-box;
 }
 
+/* Organizes divs into 16x16 layout using flexbox */
 .grid-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 0px 104.5px;
+    border: solid red;
     div {
         border: 1px solid black;
         height: 40px;
