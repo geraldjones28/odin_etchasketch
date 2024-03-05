@@ -15,6 +15,8 @@ function changeSize() {
         square.textContent = num;
         makeGrid();
     } else {
+        row.textContent = 16;
+        square.textContent = 16;
         makeGrid();
     }
 }
@@ -28,8 +30,8 @@ function makeGrid() {
         for (let j = 1; j <= square.textContent; j++) {
             const squareDiv = document.createElement("div");
             squareDiv.setAttribute('class', 'square');
-            squareDiv.style.height = `${500 / 16}px`;
-            squareDiv.style.width = `${500 / 16}px`;
+            squareDiv.style.height = `${600 / row.textContent}px`;
+            squareDiv.style.width = `${600 / row.textContent}px`;
             rowDiv.append(squareDiv);
         }
     }

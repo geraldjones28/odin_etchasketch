@@ -1,28 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Marhey:wght@300..700&display=swap');
+
 * {
     box-sizing: border-box;
 }
 
 body {
+    font-family: 'Marhey', sans-serif;
+    color: lightcoral;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: lightgray;
     gap: 20px;
 }
 
 /* Organizes divs into grid-layout using flexbox */
 .grid-container {
-    max-width: 500px;
-    max-height: 500px;
-    margin: 0 auto;
+    max-width: 600px;
+    max-height: 600px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    border: 1px solid var(--light-grey);
-    overflow: hidden;
+    border: solid 3px black;
     .row {
         display: flex;
-        .square {
-        }
     }
 }
