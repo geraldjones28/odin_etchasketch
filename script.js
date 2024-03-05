@@ -10,14 +10,19 @@ for (let j = 1; j <= 273; j++) {
 
 /* Generates a random color as mouse hovers over squares */
 for (let i = 0 ; i < boxes.length; i++) {
-    boxes[i].addEventListener('mouseover', (e) => {
-        let red = Math.floor(Math.random() * 256);
-        let green = Math.floor(Math.random() * 256);
-        let blue = Math.floor(Math.random() * 256);
+    boxes[i].addEventListener('mouseenter', (e) => {
+        let c1 = Math.floor(Math.random() * (150 - 120) + 120);
+        let c2 = Math.floor(Math.random() * (150 - 120) + 120);
+        let c3 = Math.floor(Math.random() * (150 - 120) + 120);
 
         boxes[i].style.backgroundColor = 
-        "rgb("+red+","+green+","+blue+")";
-    }) ; 
+        "rgb("+c1+","+c2+","+c3+")";
+        console.log(c1 + " " + c2 + " " + c3);
+    }); 
+}
+
+function toggle() {
+
 }
 
 /* Refreshes the page to give a clean grid */
