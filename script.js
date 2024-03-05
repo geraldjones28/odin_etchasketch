@@ -1,6 +1,10 @@
+/* Starter Variables */
 const containerDiv = document.querySelector(".grid-container");
 const row = document.getElementsByClassName('row');
 const square = document.getElementsByClassName('square');
+let darkenAmount = 25;
+
+/* Initialize Grid */
 row.textContent = 16;
 square.textContent = 16;
 makeGrid();
@@ -46,26 +50,34 @@ function resetGrid() {
   });
 }
 
-/* Gets the random squareor and shows it as mouse click-drags over squares */
+/* Generates drawing function & darkens as drawn over squares */
 function mouseEvents() {
     for (let i = 0 ; i < square.length; i++) {
         square[i].addEventListener('mousedown', () => {
-            square[i].style.backgroundColor = getRandomColor();
+            square[i].style.backgroundColor = "rgb(210, 210, 210)";
         }); 
+        
         square[i].addEventListener('mouseenter', (e) => {
             if (e.buttons === 1) {
-                square[i].style.backgroundColor = getRandomColor();
+                let currentColor = square[i].style[`background-color`];
+
+                if (!currentColor) {
+                    square[i].style[`background-color`] = `rgb(210, 210, 210)`;
+                } else {
+                    /* The REGEX matches the RGB values and creates an array of the RGB values */
+                    const initialRGB = currentColor.match(/\d+/g);
+
+                    let newRGB = [
+                        initialRGB[0] - darkenAmount,
+                        initialRGB[1] - darkenAmount,
+                        initialRGB[2] - darkenAmount
+                    ];
+                    square[i].style[`background-color`] =
+                    `rgb(${newRGB[0]}, ${newRGB[1]},${newRGB[2]})`;
+                }
             }
         }); 
     }
-}
-/* Generate a random color */
-function getRandomColor() {
-    let c1 = Math.floor(Math.random() * (150 - 120) + 120);
-    let c2 = Math.floor(Math.random() * (150 - 120) + 120);
-    let c3 = Math.floor(Math.random() * (150 - 120) + 120);
-
-    return "rgb("+c1+","+c2+","+c3+")";
 }
 
 /* Refreshes the page to give a clean grid */
