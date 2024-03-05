@@ -25,7 +25,7 @@ function changeSize() {
     }
 }
 
-/* Adds divs to DOM inputted by user (TBA) to create an even grid */
+/* Adds divs to DOM inputted by user to create an even grid */
 function makeGrid() {
     for (let i = 1; i <= row.textContent; i++) {
         const rowDiv = document.createElement("div");
