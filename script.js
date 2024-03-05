@@ -28,8 +28,8 @@ function makeGrid() {
         for (let j = 1; j <= square.textContent; j++) {
             const squareDiv = document.createElement("div");
             squareDiv.setAttribute('class', 'square');
-            squareDiv.style.height = `${500 / row}px`;
-            squareDiv.style.width = `${500 / row}px`;
+            squareDiv.style.height = `${500 / 16}px`;
+            squareDiv.style.width = `${500 / 16}px`;
             rowDiv.append(squareDiv);
         }
     }
