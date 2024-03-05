@@ -71,7 +71,7 @@ function mouseEvents() {
                     let newRGB = [
                         initialRGB[0] - darkenAmount,
                         initialRGB[1] - darkenAmount,
-                        initialRGB[2] - darkenAmount
+                        initialRGB[2] - darkenAmount,
                     ];
                     square[i].style[`background-color`] =
                     `rgb(${newRGB[0]}, ${newRGB[1]},${newRGB[2]})`;
