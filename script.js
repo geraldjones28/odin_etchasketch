@@ -1,4 +1,4 @@
-const containerDiv = document.querySelector(".grid-container2");
+const containerDiv = document.querySelector(".grid-container");
 const boxes = document.getElementsByClassName('col-boxes');
 const row = document.getElementById('row');
 const col = document.getElementById('col');
