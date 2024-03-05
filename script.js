@@ -2,13 +2,14 @@
 const containerDiv = document.querySelector(".grid-container");
 const row = document.getElementsByClassName('row');
 const square = document.getElementsByClassName('square');
-let darkenAmount = 25;
+const darkenAmount = 25;
 
 /* Initialize Grid */
 row.textContent = 16;
 square.textContent = 16;
 makeGrid();
 
+/* Prompt user and change the side of grid if input is between 16-100 (inclusive) */
 function changeSize() {
     resetGrid();
     const num = prompt(
