@@ -1,14 +1,28 @@
-const containerDiv = document.querySelector(".grid-container");
-const boxes = document.getElementsByClassName('box');
+const containerDiv = document.querySelector(".grid-container2");
+const boxes = document.getElementsByClassName('col-boxes');
+const row = document.getElementById('row');
+const col = document.getElementById('col');
+makeGrid();
 
-/* Adds 273 divs to create an even 16x16 grid */
-for (let j = 1; j <= 273; j++) {
-    const newDiv = document.createElement("div");
-    newDiv.setAttribute('class', 'box');
-    containerDiv.append(newDiv);
+function changeSize() {
+
 }
 
-/* Generates a random color as mouse click-drags over squares */
+/* Adds divs to DOM inputted by user (TBA) to create an even grid */
+function makeGrid() {
+    for (let i = 1; i <= row.textContent; i++) {
+        const rowDiv = document.createElement("div");
+        rowDiv.setAttribute('class', 'row-boxes');
+        containerDiv.append(rowDiv);
+        for (let j = 1; j <= col.textContent; j++) {
+            const colDiv = document.createElement("div");
+            colDiv.setAttribute('class', 'col-boxes');
+            rowDiv.append(colDiv);
+        }
+    }
+}
+
+/* Gets the random color and shows it as mouse click-drags over squares */
 for (let i = 0 ; i < boxes.length; i++) {
     boxes[i].addEventListener('mousedown', () => {
         boxes[i].style.backgroundColor = getRandomColor();
@@ -19,7 +33,6 @@ for (let i = 0 ; i < boxes.length; i++) {
         }
     }); 
 }
-
 /* Generate a random color */
 function getRandomColor() {
     let c1 = Math.floor(Math.random() * (150 - 120) + 120);
